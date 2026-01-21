@@ -1,0 +1,539 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #201f2d; /* Updated background color */
+}
+
+.top-nav {
+    background: linear-gradient(color #24232d,#716d9f,#24232d,#716d9f);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(51, 38, 38, 0.1);
+}
+
+.top-nav a {
+    color: #e2a55f;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin-left: 20px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+    color: #ffffff;
+}
+
+.cart-dropdown {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+.cart-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    min-width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: left;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.cart-dropdown-content p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #e2a55f;
+}
+
+.cart-dropdown-content p span {
+    color: #fff;
+}
+
+.cart-dropdown:hover .cart-dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 10px 10px;
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    margin: 20px auto;
+    max-width: 1400px;
+    border-radius: 15px; /* Slightly larger border radius for a modern look */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Add a subtle border for definition */
+    backdrop-filter: blur(10px); /* Add a glass-like blur effect */
+    color: #333; /* Ensure text is readable */
+    font-size: 1.1rem; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Improve text spacing */
+}
+
+
+main.checkout, main.cart {
+
+    background-image: none; /* Remove background image */
+    background-color: #faf6f6; /* Set a plain white background */
+    backdrop-filter: none; /* Remove the glass-like blur effect */
+    border: none; /* Remove the border */
+    box-shadow: none; /* Remove the shadow */
+}
+
+
+
+.products {
+    text-align: center;
+    padding: 20px; /* Optional padding for better spacing */
+    border-radius: 10px; /* Optional rounded corners */
+    background: linear-gradient(to top, #e67e22, #000, #e67e22, #000); /* Updated orange color */
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px 50px; /* Added gap: 30px for rows, 50px for columns */
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: #fff;
+    border: 0.5px solid #ddd; /* Changed border to 0.5px */
+    border-radius: 1px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+
+.product p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #2c2c2c;
+    color: #e2a55f;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 1rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.cart table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+.cart table th, .cart table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.cart table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.cart .btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cart .btn:hover {
+    background-color: #218838;
+}
+
+.cart .btn:last-child {
+    background-color: #dc3545; /* Red background for Cancel All Orders button */
+}
+
+.cart .btn:last-child:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.cart .btn.checkout {
+    background-color: #28a745; /* Green background for Checkout button */
+}
+
+.cart .btn.checkout:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.cart .btn.cancel {
+    background-color: #dc3545; /* Red background for Cancel All Orders button */
+}
+
+.cart .btn.cancel:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.sidenav {
+    height: 100%;
+    width: 0; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s; /* Smooth transition for opening/closing */
+    padding-top: 60px;
+}
+ 
+
+.sidenav a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #e2a55f;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #e2a55f;
+    cursor: pointer;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #e2a55f;
+    z-index: 1001; /* Ensure it appears above other elements */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Add spacing between buttons */
+    margin-top: 20px; /* Add some margin above the button group */
+}
+
+.text-cloud {
+    position: fixed; /* Stays in place even when scrolling */
+    bottom: 20px; /* Position from the bottom */
+    right: 20px; /* Position from the right */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #fff; /* White text color */
+    padding: 15px 20px; /* Padding inside the cloud */
+    border-radius: 15px; /* Rounded corners for a cloud-like appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-size: 1rem; /* Text size */
+    z-index: 1000; /* Ensure it appears above other elements */
+    max-width: 300px; /* Limit the width of the text cloud */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom, #7f7575, #201f2d); /* Gradient background */
+    color: #e5dbdb; /* White text color */
+}
+
+.login-container h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    z-index: 1;
+    position: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #e18a26; /* Highlight the text with a golden color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+}
+
+.login-container form {
+    background-image: url('images/bg2.png'); /* Set barBG.png as the background */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    width: 200%;
+    max-width: 650px; /* Limit the form width */
+}
+
+.login-container .form-group {
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #f4f3f2; /* Golden color for labels */
+}
+
+.login-container input {
+    width: 96%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: #aa5e06; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(226, 165, 95, 0.5); /* Subtle glow effect */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #b3640a; /* Golden button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #44a919; /* Darker golden color on hover */
+}
+
+.register-dialog {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-dialog p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.register-dialog .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #552f05; /* Golden button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-dialog .btn:hover {
+    background-color: #d49b4f; /* Darker golden color on hover */
+}
+
+.admin-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.admin-form input, .admin-form select, .admin-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.admin-form button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.admin-form button:hover {
+    background-color: #0056b3;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th, .admin-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.admin-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.inline-form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.add-to-cart-form {
+    position: relative;
+    display: inline-block;
+}
+
+.add-to-cart-btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.add-to-cart-description {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 120%;
+    transform: translateX(-50%);
+    background: rgba(44,44,44,0.95);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-size: 1rem;
+    z-index: 30;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    min-width: 180px;
+    max-width: 300px;
+    text-align: center;
+    pointer-events: none;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.out-of-stock {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.header-banner {
+    min-height: 250px;  /* Reduced from 400px */
+    width: 100%;
+    background: url('/webdev/images/liquorshelf.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;  /* Reduced from 100px */
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #000; /* Changed outline to black */
+    border-radius: 10px; /* Rounded corners for a clean look */
+    
+}
+
